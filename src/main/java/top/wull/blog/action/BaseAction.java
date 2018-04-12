@@ -15,7 +15,7 @@ public class BaseAction extends ActionSupport {
 	EssayService  es ;
 	Essay essay = new Essay();
 	/**
-	 * 点击最多的文章。
+	 * 点击最多的文章、
 	 * @return
 	 * @throws Exception
 	 */
