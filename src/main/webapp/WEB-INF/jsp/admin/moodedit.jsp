@@ -53,7 +53,7 @@
 					<br>
 					图片：<s:if test="#mood.picsrc!=null">
 						<img width="100px" name="img"
-							src="${ pageContext.request.contextPath }/<s:property value="#mood.picsrc" />">
+							src="http://<s:property value="#mood.picsrc" />">
 						<input type="file" value="<s:property value="#mood.picsrc" />"
 							name="upload" class="easyui-validatebox"
 							data-options="required:true" />

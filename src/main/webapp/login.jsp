@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>123登陆页面</title>
+<title>123456登陆页面</title>
 <script
 	src="${pageContext.request.contextPath }/admin/js/jquery-1.8.3.js"
 	type="text/javascript"></script>

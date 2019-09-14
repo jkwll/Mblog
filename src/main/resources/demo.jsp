@@ -16,7 +16,7 @@
 			method="post">
 			<!-- 加载编辑器的容器 -->
 			<script id="container" name="content" type="text/plain">
-            这里写你的初始化内容，无关紧要的修改，test github
+            这里写你的初始化内容，无关紧要的修改，test github 123
         </script>
 			<input type="submit" onclick="fun1()" value="提交">
 		</form>

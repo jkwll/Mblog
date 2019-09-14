@@ -1,4 +1,10 @@
 package top.wull.blog.action;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,8 +19,10 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 
 import top.wull.blog.antity.Essay;
+import top.wull.blog.antity.EssayDesc;
 import top.wull.blog.antity.EssayType;
 import top.wull.blog.antity.Mood;
+import top.wull.blog.service.EssayDescService;
 import top.wull.blog.service.EssayService;
 import top.wull.blog.service.EssayTypeService;
 import top.wull.blog.util.PageBean;
@@ -25,6 +33,8 @@ public class EssayAction extends BaseAction{
 	EssayTypeService  ets ;
 	@Resource(name="essayService")
 	EssayService  es ;
+	@Resource(name="essayDescService")
+	EssayDescService eds;
 	Essay essay = new Essay();
 	String url;
 	String content;
@@ -61,7 +71,7 @@ public class EssayAction extends BaseAction{
 		//es.getPageBean2(currentPage, pageSize);
 		ActionContext.getContext().put("pageBean", pb);
 		ActionContext.getContext().put("EssayType", getEssayType(i));
-
+System.out.println("pb=="+pb.toString());
 		//用到了session缓存、同一台浏览器，对应用一个session，这里说明用户已经是第二次访问这里了
 
 		//关于详细介绍，查看笔记本
@@ -75,6 +85,7 @@ public class EssayAction extends BaseAction{
 			ActionContext.getContext().put("EssayType", getEssayType(i));
 		}	*/	
 		commonSelect();
+		System.out.println("sdfsdf");
 		return "list";
 	}
 	public void commonSelect() throws Exception{
@@ -86,23 +97,49 @@ public class EssayAction extends BaseAction{
 		//ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 		//这里不支持中文，所以jsp的名字暂时不能为中文
 		String url = ServletActionContext.getRequest().getRequestURI();
+		//两个文章类型 位置
 		int n = url.indexOf("knowledge");
 		if(n == -1 ){
 		 n = url.indexOf("life");			
 		}
+		// url=knowledge/id
 		url = url.substring(n, url.length());
 		//查询文章信息
 		Essay essay = es.getByUrl(url);
+		//如果数据库有这个数据
 		if(essay!=null){
 			//浏览次数+1 
-			es.updateEssayCount(url);			
+			es.updateEssayCount(url);
+			String path = ServletActionContext.getServletContext().getRealPath("/");
+			System.out.println("path=="+path);
+			File jspfile=new File(path+essay.getUrl()+".jsp");    
+			//如果文件系统里面没有这个jsp文件（第一次访问），就在文件系统里面新建jsp文件
+			if(!jspfile.exists()) 
+			{    
+			    try {    
+			    	//根据数据库essay新建文件
+			    	FileOutputStream jspfos = new FileOutputStream(jspfile);
+					OutputStreamWriter  osw = new OutputStreamWriter(jspfos,"UTF-8");//初始化输出流
+					jspfile.createNewFile();
+					EssayDesc ed = eds.getDescById(essay.getEssay_id());  
+					String wstr = ed.getContent();
+					osw.write(wstr);
+					osw.close();		
+			    } catch (IOException e) {    
+			        // TODO Auto-generated catch block    
+			        e.printStackTrace();    
+			    }    
+			}    
+
 		}
 		ActionContext.getContext().put("EssayType", getEssayType(Integer.valueOf(essay.getEssayType().getFlag())));
-
 		ActionContext.getContext().put("lookEssay", essay);
-		if(es.getByUrl(url)!=null){
+		if(essay!=null){
 			ActionContext.getContext().put("newEssaylist", newEssaylist(6));
 			ActionContext.getContext().put("showMaxCountEssay", showMaxCountEssay());
+
+
+
 			return "look";
 		}
 		return null;
@@ -148,7 +185,7 @@ public class EssayAction extends BaseAction{
 	 * @return
 	 */
 	public String addCount(){
-		es.updateByURL(url);
+		es.updateEssayCountByURL(url);
 		return "essayadd";
 	}
 	public String test(){

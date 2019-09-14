@@ -3,15 +3,17 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>吴亮亮个人博客网站—一个站在web前段设计之路的男技术员个人博客网站</title>
+<title>吴亮亮个人博客网站—个人博客网站</title>
 <meta name="keywords" content="个人博客,吴亮亮个人博客,个人博客模板,吴亮亮" />
 <meta name="description"
-	content="吴亮亮个人博客，是一个站在web前端设计之路的男程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+	content="吴亮亮个人博客，是一个站在web前端设计之路的男程序员个人网站。" />
 <link href="${pageContext.request.contextPath }/css/base.css"
 	rel="stylesheet">
 <link href="${pageContext.request.contextPath }/css/learn.css"
 	rel="stylesheet">
-<%-- 搜索 --%>
+<%-- <link href="${pageContext.request.contextPath }/css/learn.css"
+	rel="stylesheet">
+ --%><%-- 搜索 --%>
 <link href="${ pageContext.request.contextPath }/css/bootstrap.min.css"
 	rel="stylesheet">
 <%-- 换页 --%>
@@ -30,7 +32,7 @@
 </head>
 <body>
 	<form id="pageForm" name="customerForm"
-		action="${pageContext.request.contextPath}/knowledge.action<s:property value="#changeurl" />"
+		action="${pageContext.request.contextPath}/knowledge1<s:property value="#changeurl" />"
 		method=post>
 		<!-- 隐藏域.当前页码 -->
 		<input type="hidden" name="currentPage" id="currentPageInput"

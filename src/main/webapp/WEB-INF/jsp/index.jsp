@@ -3,20 +3,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>吴亮亮的个人博客9</title>
-<meta name="keywords" content="个人博客模板,博客模板" />
+<title>吴亮亮个人博客-分享java技术的个人博客网站</title>
+<meta name="keywords" content="个人博客,亮亮,吴亮亮,博客,技术,java" />
 <meta name="description" content="吴亮亮个人博客-分享java技术的个人博客网站" />
-<link rel="stylesheet"
-	href="${ pageContext.request.contextPath }/css/base.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="${ pageContext.request.contextPath }/css/index.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="${ pageContext.request.contextPath }/css/style.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="${ pageContext.request.contextPath }/css/my.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/css/base.css" type="text/css" />
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/css/index.css" type="text/css" />
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/css/style.css" type="text/css" />
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/css/my.css" type="text/css" />
 <script>
 var i = 0;
 function mOver(){
@@ -28,10 +23,31 @@ function mOut()
 	var cat = document.getElementById("cat");
 	cat.src="./images/cat10.png";
 }
+k=1;
+function no_off(){
+	if(k==0){
+		document.getElementById('music').pause();
+		//alert("暂停了");
+		//document.getElementById('imgkey').src="images/播放.png";
+		k=1;
+		return false;
+	}else{
+		document.getElementById('music').play();
+		//alert("播放");
+		//document.getElementById('imgkey').src="images/暂停.png";
+		k=0;
+		return false;
+	}
+}	
 </script>
+<%-- <script type="text/javascript" src="${ pageContext.request.contextPath }/js/music.js" />
+ --%>
+
 </head>
 <body>
+
 	<%@ include file="/public/header.jsp"%>
+	
 	<div class="banner">
 		<section class="box">
 			<ul class="texts">
@@ -54,17 +70,20 @@ function mOut()
 			<ul>
 				<s:iterator var="e" value="#news" status="status">
 					<li><a href="<s:property value="#e.url" />" target="_blank"><img
-							src="<s:property value="#e.picsrc" />"></a><span><s:property
+							src="http://<s:property value="#e.picsrc" />"></a><span><s:property
 								value="#e.title" /></span></li>
 				</s:iterator>
-		</div>
+<!-- 				<li>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=165237&auto=1&height=32"></iframe>				
+				</li>
+ -->		</div>
 	</div>
 
 	<div id="main">
 		<div id="ccat">
 			<a href="javascript:void(0)"> <img id="cat"
 				src="${ pageContext.request.contextPath }/images/cat10.png"
-				onmouseover="mOver(this)" onmouseout="mOut(this)">
+				onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="no_off();">
 			</a>
 		</div>
 	</div>
@@ -81,20 +100,20 @@ function mOut()
 					<s:property value="#e.title" />
 				</h3>
 				<figure>
-					<img src="<s:property value="#e.picsrc" />">
+					<img src="http://<s:property value="#e.picsrc" />">
 				</figure>
 				<ul>
 					<p>
 						<s:property value="#e.introduction" />
-						12315111111111111111111
+						
 					</p>
 					<a href="<s:property value="#e.url" />" target="_blank"
 						class="readmore">阅读全文>></a>
 				</ul>
 				<p class="dateview">
 					<span>&nbsp;<s:property value="#e.time" />
-					</span><span>作者：<s:property value="#e.editor" /></span><span>个人博客：[<a
-						href="/news/life/"><s:property value="#e.type" /></a>]
+					</span><span>作者：<s:property value="#e.editor" /></span><span>个人博客：[
+						<a><s:property value="#e.essayType.name" /></a> ]
 					</span>
 				</p>
 			</s:iterator>
@@ -128,9 +147,7 @@ function mOut()
 					class="bds_renren"></a><span class="bds_more"></span><a
 					class="shareCount"></a>
 			</div>
-			
 			-->
-
 			<script type="text/javascript" id="bdshare_js"
 				data="type=tools&amp;uid=6574585"></script>
 			<script type="text/javascript" id="bdshell_js"></script>
@@ -144,5 +161,7 @@ function mOut()
 	</article>
 	<%@ include file="/public/info.jsp"%>
 	<script src="${ pageContext.request.contextPath }/js/silder.js"></script>
+	<audio id="music"  style="display:none"  src="<s:property value="#music" />" controls="controls">
+	
 </body>
 </html>

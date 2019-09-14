@@ -1,4 +1,5 @@
 package top.wull.blog.antity;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name="mood")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Mood {
+public class Mood implements Serializable{
 	@Id @Column(name="mood_id")
 	//主键由数据库自动生成（主要是自动增长型） 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,13 +29,14 @@ public class Mood {
 	Integer flag;
 	
 
-	public Mood(Integer mood_id, String content, Date time, String picsrc, Integer flag) {
+	public Mood(Integer mood_id, String content, Date time, String picsrc,String hpicsrc, Integer flag) {
 		super();
 		this.mood_id = mood_id;
 		this.content = content;
 		this.time = time;
 		this.picsrc = picsrc;
 		this.flag = flag;
+		this.hpicsrc = hpicsrc;
 	}
 	public Mood(){}
 	public Integer getMood_id() {

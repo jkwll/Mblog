@@ -58,9 +58,9 @@ public class EssayServiceImpl implements EssayService{
 	public void updateEssay(Essay essay) {
 		ed.update(essay);
 	}
-	public void updateByURL(String url) {
+	public void updateEssayCountByURL(String url) {
 		// TODO Auto-generated method stub
-		ed.updateByURL(url);
+		ed.updateEssayCountByURL(url);
 	}
 	public List<Essay> getMaxCountEssay() {
 		return ed.getMaxCountEssay();
@@ -94,6 +94,12 @@ public class EssayServiceImpl implements EssayService{
 	public  Essay getById(Integer essay_id) {
 		// TODO Auto-generated method stub
 		return ed.getById(essay_id);
+	}
+
+	public Integer getMaxEssayId() {
+		return ed.getMaxEssayId();
+		// TODO Auto-generated method stub
+		
 	}
 
 

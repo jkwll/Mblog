@@ -41,13 +41,13 @@ a:link, a:visited {
 }
 
 .box {
-	width: 1000px;
+	width: 1150px;
 	margin: auto;
 	overflow: hidden
 }
 
 header {
-	width: 1000px;
+	width: 1150px;
 	margin: auto;
 	height: 80px;
 	position: relative;
@@ -124,19 +124,21 @@ nav a:hover {
 	display: block;
 } /* ie */
 article {
-	width: 1000px;
+	width: 1150px;
 	margin: 20px auto;
 	overflow: hidden
 }
 
 aside {
 	width: 250px;
+	margin: 10px auto;
+	
 }
 
 footer {
 	text-align: center;
 	line-height: 40px;
 	border-top: #E8E8E8 1px solid;
-	width: 1000px;
+	width: 1150px;
 	margin: auto
 }

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script async="" charset="utf-8" src="./吴亮亮留言板_files/getConfig"></script>
-<title>吴亮亮个人博客网站—一个站在web前端设计之路的男技术员个人博客网站</title>
+<title>吴亮亮个人博客网站—个人博客网站</title>
 <meta name="keywords" content="yangqq留言板">
 <meta name="description" content="yangqq留言板">
 <link href="${ pageContext.request.contextPath }/css/base.css"

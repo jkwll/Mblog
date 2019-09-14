@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>吴亮亮个人博客网站—一个站在web前段设计之路的男技术员个人博客网站</title>
+<title>吴亮亮个人博客网站—分享生活和技术的个人博客网站</title>
 <meta name="keywords" content="个人博客,吴亮亮个人博客,个人博客模板,吴亮亮" />
 <meta name="description"
 	content="吴亮亮个人博客，是一个站在web前端设计之路的男程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />

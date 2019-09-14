@@ -37,7 +37,7 @@ a.n1, a.n2 {
 
 .index_about {
 	float: left;
-	width: 740px;
+	width: 870px;
 	overflow: hidden;
 	background: url(../images/r_line.jpg) repeat-y right;
 	margin: 10px 0
@@ -112,7 +112,6 @@ ul.infos p img {
 .otherlink ul {
 	margin: 10px 0
 }
-
 .otherlink li {
 	line-height: 24px;
 	height: 24px;
@@ -122,10 +121,20 @@ ul.infos p img {
 	overflow: hidden;
 	margin-right: 30px;
 }
-
 .otherlink li a:hover {
 	text-decoration: underline
 }
+.news_pl { margin: 10px 0; width: 100%; background: #FFF; border-radius: 10px; overflow: hidden; margin: 20px 0 }
+.news_pl h2 { 
+	background: url(../images/newsbg03.png) no-repeat left 10px center;
+	border-bottom: #099 2px solid;
+	line-height: 40px;
+	font-size: 12px;
+	font-weight: normal;
+	margin-right: 20px;
+	padding-left: 40px
+  }
+.xzsm ul, .ffsm ul { padding: 20px; line-height: 24px; border-top: 6px solid #a6b5c5; }
 
 .rank li {
 	height: 25px;

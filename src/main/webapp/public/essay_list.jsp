@@ -7,13 +7,19 @@
 		</h2>
 		<p class="dateview">
 			<span>发布时间：<s:property value="#e.time" /></span><span>作者：<s:property
-					value="#e.editor" /></span><span>分类：[<a href="/news/life/"><s:property
-						value="#e.essayType.name" /></a>]
+					value="#e.editor" /></span><span>分类：[
+<%--因为地址风格是      	knowledge/**    导致life不能通用，暂时这里先不用超链接				<a href="${ pageContext.request.contextPath }/knowledge/select<s:property value="#e.essayType.url" />.action">
+					</a>
+					
+ --%>				
+ 							<a><s:property value="#e.essayType.name" /></a>
+					
+						]
 			</span>
 		</p>
 		<figure>
 			<s:if test="#e.picsrc!=null">
-				<img name="img" src="<s:property value="#e.picsrc" />">
+				<img name="img" src="http://<s:property value="#e.picsrc" />">
 			</s:if>
 		</figure>
 		<ul class="nlist">
@@ -21,7 +27,7 @@
 				<s:property value="#e.introduction" />
 			</p>
 
-			<a href="<s:property value="#e.url+#e.essay_id" />" class="readmore">详细信息>></a>
+			<a href="<s:property value="#e.url" />" class="readmore">详细信息>></a>
 		</ul>
 		<div class="line"></div>
 	</s:iterator>

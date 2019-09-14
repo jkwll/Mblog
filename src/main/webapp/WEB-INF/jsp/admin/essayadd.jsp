@@ -52,7 +52,7 @@
 	<s:form action="essayUpload" method="post"
 		enctype="multipart/form-data">
 		<input type="hidden" name="functionIds">
-		<table class="table-edit" width="40%">
+		<table class="table-edit" width="30%">
 			<tr class="title">
 				<td colspan="2">文章信息</td>
 				<td></td>
@@ -118,12 +118,12 @@
 				<td><input type="text" name="keywords"
 					class="easyui-validatebox" data-options="required:true" /></td>
 			</tr>
-			<tr>
+<!-- 			<tr>
 				<td width="200">jsp名字</td>
 				<td><input type="text" name="jspName"
 					class="easyui-validatebox" data-options="required:true" /></td>
 			</tr>
-
+ -->
 <!-- 			<tr>
 				<td width="200">文章内容（html）</td>
 				<td><input type="file" name="htmlFile" multiple
@@ -141,10 +141,8 @@
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="发表"></input></td>
 			</tr>
-
-
 		</table>
-		<div class="edit" style="width: 710px">
+		<div class="edit" style="width: 910px">
 			<!-- 加载编辑器的容器 -->
 			<script id="container" name="content" type="text/plain">
   				            		这里是文章的内容

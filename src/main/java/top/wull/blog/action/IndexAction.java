@@ -15,7 +15,9 @@ import com.opensymphony.xwork2.ActionContext;
 
 import top.wull.blog.antity.Essay;
 import top.wull.blog.service.EssayService;
+import top.wull.blog.service.EssayTypeService;
 import top.wull.blog.service.MoodService;
+import top.wull.blog.service.MusicService;
 import top.wull.blog.util.PageBean;
 @Controller("indexAction")
 @Scope("prototype")
@@ -30,7 +32,8 @@ public class IndexAction extends BaseAction {
 	Essay e = new Essay();
 	private Integer currentPage = 1;
 	private Integer pageSize = 6;
-	
+	@Resource(name="musicService")
+	MusicService  mus ;
 	public Integer getCurrentPage() {
 		return currentPage;
 	}
@@ -61,8 +64,14 @@ public class IndexAction extends BaseAction {
 		ActionContext.getContext().put("newEssaylist", newEssaylist(8));			
 		ActionContext.getContext().put("showMaxCountEssay", showMaxCountEssay());		
 		ActionContext.getContext().put("pageBean", pb);
-		System.out.println(pb.toString());
+		ActionContext.getContext().put("music", getRandomMusicUrl());
+		
+		System.out.println("dddddd");
 		return "list";
+	}
+	
+	String getRandomMusicUrl(){
+		return mus.getRandomMusicUrl();
 	}
 	//主页的最新动态
 	public List news(){

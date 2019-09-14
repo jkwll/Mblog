@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>后台登录-X-admin1.1</title>
+<title>后台登录11</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- 导入jquery核心类库 -->
 <script type="text/javascript"

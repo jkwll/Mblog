@@ -53,7 +53,7 @@
 					<br>
 					图片：<s:if test="#essay.picsrc!=null">
 						<img width="100px" name="img"
-							src="${ pageContext.request.contextPath }/<s:property value="#essay.picsrc" />">
+							src="http:///<s:property value="#essay.picsrc" />">
 					</s:if>
 					<input type="file" value="<s:property value="#essay.picsrc" />"
 						name="pic" class="easyui-validatebox" data-options="required:true" />

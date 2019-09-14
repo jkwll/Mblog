@@ -13,7 +13,7 @@
 		<div class="index_about">
 			<%-- 文章标题 --%>
 			<%@ include file="/public/title.jsp"%>
-			<div class="book left">
+			<div class="book left" style="width: 96.553%">
 				<%-- 正文 --%>
 				text123
 				<%@ include file="/public/lower.jsp"%>

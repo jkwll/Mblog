@@ -121,8 +121,9 @@ window.close();
 												<TD width="18%"><input type="text" name="time"
 													value="<s:property value="#m.time" />"></TD>
 												<TD width="18%"><s:property value="#m.flag" /></TD>
-												<TD><a
-													href="${pageContext.request.contextPath }/admin/moodadmin.action?mood_id=<s:property value="#m.mood_id" />">修改</a>
+												<TD>
+												<a href="${pageContext.request.contextPath}/admin/moodadmin.action?mood_id=<s:property value="#m.mood_id" />">
+												修改</a>
 												</TD>
 											</TR>
 										</s:iterator>

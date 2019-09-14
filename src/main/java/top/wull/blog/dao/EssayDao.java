@@ -10,7 +10,7 @@ public interface EssayDao extends BaseDao<Essay>{
 
 	List<Essay> getMaxCountEssay();
 
-	void updateByURL(String url);
+	void updateEssayCountByURL(String url);
 	
 	
 	/*
@@ -26,4 +26,6 @@ public interface EssayDao extends BaseDao<Essay>{
 	void updateEssayCount(String url);
 
 	void updateById(Essay e);
+
+	Integer getMaxEssayId();
 }

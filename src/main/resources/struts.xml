@@ -32,7 +32,7 @@
 <!-- 为什么  name="life" 不行？？？包括下面的knowledge -->
  		<action name="life" class="top.wull.blog.action.LifeAction"
 			method="toLife">
-			<result name="list">/WEB-INF/jsp/life.jsp</result>
+			<result name="list2">/WEB-INF/jsp/life.jsp</result>
 		</action>
 
  		<action name="mood" class="top.wull.blog.action.MoodAction"
@@ -115,10 +115,7 @@
 		</action>
 	</package>
 
-
 	<!-- 配置后台的Action -->
-
-
 	<package name="admin" namespace="/admin" extends="struts-default">
 		<interceptors>
 			<!-- 注册拦截器 -->
@@ -174,8 +171,7 @@
 			<param name="htmlsavePath">/knowledge/static</param>
 			<param name="picsavePath">/knowledge/static/images</param>
 			<param name="savePath">/webfile/images</param>
-			<result name="moodAdd">/WEB-INF/jsp/admin/moodadd.jsp
-			</result>
+			<result name="moodAdd">/WEB-INF/jsp/admin/moodadd.jsp</result>
 		</action>
 		<!-- 配置文章上传的Action -->
 		<action name="essayUpload"

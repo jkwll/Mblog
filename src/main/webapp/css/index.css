@@ -598,7 +598,7 @@ opacity
 }
 
 .template li img {
-	width: 142px;
+	width: 140px;
 	height: 80px;
 	background: #FFF;
 	padding: 4px;
@@ -639,7 +639,7 @@ h2.title_tj p {
 }
 
 .bloglist {
-	width: 740px;
+	width: 890px;
 	overflow: hidden;
 	background: url(../images/r_line.jpg) repeat-y right;
 }
@@ -662,13 +662,13 @@ h2.title_tj p {
 
 .bloglist ul {
 	float: left;
-	width: 520px;
+	width: 660px;
 	margin: 10px 0px 0 15px;
 	line-height: 20px;
 }
 
 .dateview {
-	width: 695px;
+	width: 830px;
 	overflow: hidden;
 	clear: both;
 	margin: 10px 0 0 0;

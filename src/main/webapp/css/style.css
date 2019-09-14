@@ -4,13 +4,15 @@ h1.t_nav span {
 	float: right;
 	color: #999
 }
-
+/*µ¼º½À¸¸ß¶È*/
 h1.t_nav {
 	border-bottom: #F1F1F1 1px solid;
 	font-size: 12px;
 	font-weight: normal;
 	line-height: 40px;
 	height: 40px;
+	margin: 0px auto;
+	
 }
 
 h1.t_nav a {
@@ -30,7 +32,7 @@ h1.t_nav a {
 }
 
 .newblog {
-	width: 740px;
+	width: 890px;
 	overflow: hidden;
 	background: url(../images/r_line.jpg) repeat-y right;
 	margin: 10px 0
@@ -66,9 +68,11 @@ p.dateview span a {
 }
 
 .nlist {
+position:relative;
+ left:-120px;
 	width: 530px;
 	float: left;
-	margin: 0 0 0 10px;
+	margin: 0 0 0 160px;
 	line-height: 1.9;
 }
 

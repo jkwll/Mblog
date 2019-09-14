@@ -17,3 +17,17 @@
 	<ul>无相关信息
 	</ul>
 </div>
+
+<div class="news_pl">
+      <h2>文章评论</h2>
+      				<!--PC版-->
+			<div id="SOHUCS" sid="<s:property value="#lookEssay.essay_id" />"> </div>
+			<script charset="utf-8" type="text/javascript"
+				src="https://changyan.sohu.com/upload/changyan.js"></script>
+			<script type="text/javascript">
+				window.changyan.api.config({
+				appid: 'cytmzVekL',
+				conf: 'prod_ce79614696b4fc22a0f61cdccd5a03c3'
+				});
+				</script>
+</div>

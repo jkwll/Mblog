@@ -13,7 +13,7 @@
 		<div class="index_about">
 			<%-- 文章标题 --%>
 			<%@ include file="/public/title.jsp"%>
-			<div class="book left">
+			<div class="book left" style="width: 96.553%;">
 				<%-- 正文 --%>
 				text123
 				<%@ include file="/public/lower.jsp"%>
@@ -23,8 +23,8 @@
 	</article>
 	<%@ include file="/public/info.jsp"%>
 	<script
-		src="${ pageContext.request.contextPath }/knowledge/js/common.js"></script>
+		src="${ pageContext.request.contextPath }/js/common.js"></script>
 	<script
-		src="${ pageContext.request.contextPath }/knowledge/js/silder.js"></script>
+		src="${ pageContext.request.contextPath }/js/silder.js"></script>
 </body>
 </html>

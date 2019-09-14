@@ -12,31 +12,47 @@ import top.wull.common.dao.impl.BaseDaoImpl;
 
 @Repository("moodDao")
 public class MoodDaoImpl extends BaseDaoImpl<Mood> implements MoodDao{
+public void showtest(){
+	System.out.println("showtest");
+}
 
 	public void updateById(Mood mood) {
-		
-		/*Session session = getSessionFactory().getCurrentSession();
-		Criteria criteria = session.createCriteria(Mood.class);
-		criteria.add(Restrictions.eq("mood_id",mood.getMood_id()));
-		Mood mood1 = (Mood) criteria.list().get(0);
-		//String hql = "UPDATE Essay e SET e.count =123456 WHERE e.essay_id = 58";
-		//String sql = "UPDATE mood SET content = "+mood1.getContent()+" WHERE essay_id = "+mood1.getMood_id();
-		String sql = "UPDATE mood SET content = 'dddddd' WHERE mood_id = '20'";
-		//getSessionFactory().openSession().createSQLQuery(sql).executeUpdate();用他，多次运行就卡死
-		getSessionFactory().getCurrentSession().createSQLQuery(sql).executeUpdate();*/
-		// TODO Auto-generated method stub
-		
-		
-		//UPDATE mood SET content = '123456', WHERE mood_id = 2
 		//文字一定要加 ''
+		System.out.println("0000000000000000");
 		String sql;
-		if(mood.getPicsrc()!=null){
-			 sql = "UPDATE mood SET time = '"+mood.getTime()+"', content = '"+mood.getContent()+"', flag="+mood.getFlag()+", picsrc='"+mood.getPicsrc()+"' WHERE mood_id = '"+mood.getMood_id()+"'";			
-		}else{
-			 sql = "UPDATE mood SET time = '"+mood.getTime()+"', content = '"+mood.getContent()+"', flag="+mood.getFlag()+" WHERE mood_id = '"+mood.getMood_id()+"'";			
+		String sql1 = "content = '"+mood.getContent()+"'";
+		String sql2 = "flag = "+mood.getFlag();
+		String sql3 = "picsrc = '"+mood.getPicsrc()+"'";
+		String sql4 = "content = '"+mood.getContent()+"'";
+		String sql5 = "hpicsrc = '"+mood.getHpicsrc()+"'";
+		String sql6 = "time = '"+mood.getTime()+"'";
+		String sqlL = "UPDATE mood SET ";
+		String sqlR = " WHERE mood_id = '"+mood.getMood_id()+"'";
+		String sqlZ = "";
+		if(mood.getContent()!=null){
+			sqlZ = sql1+",";
 		}
-
-		getSessionFactory().getCurrentSession().createSQLQuery(sql).executeUpdate();		
+		if(mood.getFlag()!=null){
+			sqlZ = sqlZ+sql2+",";
+		}
+		if(mood.getPicsrc()!=null){
+			sqlZ = sqlZ+sql3+",";
+		}
+		if(mood.getContent()!=null){
+			sqlZ = sqlZ+sql4+",";
+		}	
+		if(mood.getHpicsrc()!=null){
+			sqlZ = sqlZ+sql5+",";
+		}
+		if(mood.getTime()!=null){
+			sqlZ = sqlZ+sql6+",";
+		}
+		if(!sqlZ.equals("")){
+		    sql = sqlL + sqlZ.substring(0, sqlZ.length()-1) + sqlR;
+			getSessionFactory().getCurrentSession().createSQLQuery(sql).executeUpdate();					
+		}else{
+			System.out.println("拼sql异常");
+		}
 	}
 
 	public void getNews(Integer i) {
